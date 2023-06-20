@@ -9,9 +9,10 @@ addTaskBtn.addEventListener('click', function (e) {
     } else {
         todoDiv.insertAdjacentHTML(`beforeend`, `
         <li class="task">
-                <span class="task-name">
+            <input type="checkbox" id="scales" name="task-name">
+            <label for="task-name">
                     ${taskInput.value}
-                </span>
+                </label>
         <button class="delete w-5\t">
             DEL
         </button>
