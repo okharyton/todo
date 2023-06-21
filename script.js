@@ -2,7 +2,7 @@ const todoDiv = document.querySelector('.todo-list');
 const addTaskBtn = document.querySelector('.add-task');
 const taskInput = document.querySelector('.task-input');
 
-addTaskBtn.addEventListener('click', function (e) {
+let addTask = function (e) {
     e.preventDefault();
     if (taskInput.value.length === 0) {
         alert('Enter Task Name');
@@ -25,6 +25,13 @@ addTaskBtn.addEventListener('click', function (e) {
             })
         }
         document.querySelector('.task-input').value = '';
+    }
+}
+
+addTaskBtn.addEventListener('click', addTask);
+taskInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        addTask(e);
     }
 })
 
