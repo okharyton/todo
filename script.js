@@ -13,12 +13,14 @@ let addTask = function (e) {
     } else {
         todoDiv.insertAdjacentHTML(`beforeend`, `
         <li class="task">
+            <div class="task-input__container">
             <input type="checkbox" id="checkbox" name="task-name">
             <label class="task-label" for="task-name">
                     ${taskInput.value}
                 </label>
+</div>
         <button class="delete w-5\t">
-            DEL
+            <i class="fa fa-trash" aria-hidden="true"></i>
         </button>
     </li>
         `);

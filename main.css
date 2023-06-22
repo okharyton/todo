@@ -32,3 +32,10 @@
     font-size: 1rem;
     line-height: 1.5;
 }
+.task {
+    display: flex;
+    margin-bottom: 9px;
+}
+.task-input__container {
+    padding-right: 5px;
+}
