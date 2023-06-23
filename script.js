@@ -4,6 +4,7 @@ const taskInput = document.querySelector('.task-input');
 const checkbox = document.querySelector('#checkbox');
 const taskLabel = document.querySelector('.task-label');
 
+
 console.log(checkbox)
 
 let addTask = function (e) {
@@ -14,20 +15,24 @@ let addTask = function (e) {
         todoDiv.insertAdjacentHTML(`beforeend`, `
         <li class="task">
             <div class="task-input__container">
-            <input type="checkbox" id="checkbox" name="task-name">
-            <label class="task-label" for="task-name">
-                    ${taskInput.value}
-                </label>
-</div>
-        <button class="delete w-5\t">
-            <i class="fa fa-trash" aria-hidden="true"></i>
-        </button>
-    </li>
+                <div class="task-line">
+                    <input type="checkbox" id="checkbox" name="task-name">
+                    <label class="task-label" for="task-name">
+                        ${taskInput.value}
+                    </label>
+                </div>
+                <button class="delete w-5">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+            </div>
+        </li>
         `);
         let currentTasks = document.querySelectorAll('.delete');
         for (let i = 0; i <currentTasks.length; i++) {
             currentTasks[i].addEventListener('click', function () {
-                this.parentNode.remove();
+                const taskContainer = this.closest('.task');
+                taskContainer.style.backgroundColor = '';
+                taskContainer.remove();
             })
         }
         document.querySelector('.task-input').value = '';
@@ -35,13 +40,12 @@ let addTask = function (e) {
 }
 
 let greenStatus = function () {
-    const listItem = this.closest('li');
-    const taskLabel = listItem.querySelector('.task-label');
+    const taskContainer = this.closest('.task');
 
     if (this.checked) {
-        taskLabel.style.backgroundColor = 'green';
+        taskContainer.style.backgroundColor = 'green';
     } else {
-        taskLabel.style.backgroundColor = '';
+        taskContainer.style.backgroundColor = '';
     }
 }
 

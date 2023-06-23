@@ -33,9 +33,17 @@
     line-height: 1.5;
 }
 .task {
-    display: flex;
     margin-bottom: 9px;
+    border-radius: 80px;
+    padding: 10px;
+    background: rgba(197, 250, 213, 0.58);
+    min-width: 358px;
+}
+.task:hover {
+    background: #C5FAD5;
 }
 .task-input__container {
+    display: flex;
+    justify-content: space-between;
     padding-right: 5px;
 }
