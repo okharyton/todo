@@ -47,3 +47,7 @@
     justify-content: space-between;
     padding-right: 5px;
 }
+.buttons {
+    display: flex;
+    gap: 15px;
+}

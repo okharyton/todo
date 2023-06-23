@@ -3,6 +3,7 @@ const addTaskBtn = document.querySelector('.add-task');
 const taskInput = document.querySelector('.task-input');
 const checkbox = document.querySelector('#checkbox');
 const taskLabel = document.querySelector('.task-label');
+let editButtons = document.querySelectorAll('.edit');
 
 
 console.log(checkbox)
@@ -13,20 +14,30 @@ let addTask = function (e) {
         alert('Enter Task Name');
     } else {
         todoDiv.insertAdjacentHTML(`beforeend`, `
-        <li class="task">
-            <div class="task-input__container">
-                <div class="task-line">
-                    <input type="checkbox" id="checkbox" name="task-name">
-                    <label class="task-label" for="task-name">
-                        ${taskInput.value}
-                    </label>
-                </div>
+    <li class="task">
+        <div class="task-input__container">
+            <div class="task-line">
+                <input type="checkbox" id="checkbox" name="task-name">
+                <label class="task-label" for="task-name">
+                    ${taskInput.value}
+                </label>
+            </div>
+            <div class="buttons">
+                <button class="edit">
+                    <i class="fas fa-edit" style="color: #121212;"></i>
+                </button>
                 <button class="delete w-5">
                     <i class="fa fa-trash" aria-hidden="true"></i>
                 </button>
             </div>
-        </li>
-        `);
+        </div>
+    </li>
+`);
+        let editButtons = document.querySelectorAll('.edit');
+        editButtons.forEach(function (editButton) {
+            editButton.addEventListener('click', editTask);
+        });
+
         let currentTasks = document.querySelectorAll('.delete');
         for (let i = 0; i <currentTasks.length; i++) {
             currentTasks[i].addEventListener('click', function () {
@@ -43,7 +54,7 @@ let greenStatus = function () {
     const taskContainer = this.closest('.task');
 
     if (this.checked) {
-        taskContainer.style.backgroundColor = 'green';
+        taskContainer.style.backgroundColor = '#2BAE66';
     } else {
         taskContainer.style.backgroundColor = '';
     }
@@ -62,3 +73,32 @@ document.addEventListener('change', function (e) {
     }
 });
 
+let editTask = function () {
+    const taskContainer = this.closest('.task');
+    const taskLabel = taskContainer.querySelector('.task-label');
+
+    taskLabel.setAttribute('contenteditable', 'true');
+    taskLabel.focus();
+    taskLabel.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            taskLabel.blur();
+        }
+    });
+    taskLabel.addEventListener('blur', function () {
+        taskLabel.removeAttribute('contenteditable');
+    });
+};
+
+let saveTask = function () {
+    const taskContainer = this.closest('.task');
+    const taskLabel = taskContainer.querySelector('.task-label');
+
+    // Выключить режим редактирования и сохранить изменения
+    taskLabel.removeAttribute('contenteditable');
+    // Сохранить изменения, например, можно обновить их в базе данных
+    // или выполнять другие необходимые действия
+}
+editButtons.forEach(function (editButton) {
+    editButton.addEventListener('click', editTask);
+});
