@@ -51,3 +51,21 @@
     display: flex;
     gap: 15px;
 }
+.add-task::before {
+    font-family: "Font Awesome 5 Free", sans-serif;
+    font-weight: 400;
+    content: "\f0fe";
+    padding-right: 10px;
+}
+.show-completed-tasks::before {
+    font-family: "Font Awesome 5 Free", sans-serif;
+    font-weight: 400;
+    content: "\f058";
+    padding-right: 10px;
+}
+.show-all-tasks::before {
+    font-family: "Font Awesome 5 Free", sans-serif;
+    font-weight: 400;
+    content: "\f022";
+    padding-right: 10px;
+}

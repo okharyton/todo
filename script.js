@@ -94,10 +94,7 @@ let saveTask = function () {
     const taskContainer = this.closest('.task');
     const taskLabel = taskContainer.querySelector('.task-label');
 
-    // Выключить режим редактирования и сохранить изменения
     taskLabel.removeAttribute('contenteditable');
-    // Сохранить изменения, например, можно обновить их в базе данных
-    // или выполнять другие необходимые действия
 }
 editButtons.forEach(function (editButton) {
     editButton.addEventListener('click', editTask);
