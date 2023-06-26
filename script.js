@@ -4,9 +4,7 @@ const taskInput = document.querySelector('.task-input');
 const checkbox = document.querySelector('#checkbox');
 const taskLabel = document.querySelector('.task-label');
 let editButtons = document.querySelectorAll('.edit');
-
-
-console.log(checkbox)
+const showCompletedTasksBtn = document.querySelector('.show-completed-tasks');
 
 let addTask = function (e) {
     e.preventDefault();
@@ -96,6 +94,19 @@ let saveTask = function () {
 
     taskLabel.removeAttribute('contenteditable');
 }
+
+let showCompletedTasks = function () {
+    const tasks = document.querySelectorAll('.task');
+    tasks.forEach(function (task) {
+        const checkbox = task.querySelector('input[type="checkbox"]');
+        if (checkbox.checked) {
+            task.style.display = 'block';
+        } else {
+            task.style.display = 'none';
+        }
+    });
+};
 editButtons.forEach(function (editButton) {
     editButton.addEventListener('click', editTask);
 });
+showCompletedTasksBtn.addEventListener('click', showCompletedTasks);
