@@ -5,6 +5,7 @@ const checkbox = document.querySelector('#checkbox');
 const taskLabel = document.querySelector('.task-label');
 let editButtons = document.querySelectorAll('.edit');
 const showCompletedTasksBtn = document.querySelector('.show-completed-tasks');
+const showAllTasksBtn = document.querySelector('.show-all-tasks');
 
 let addTask = function (e) {
     e.preventDefault();
@@ -106,7 +107,16 @@ let showCompletedTasks = function () {
         }
     });
 };
+
+let showAllTasks = function () {
+    const tasks = document.querySelectorAll('.task');
+    tasks.forEach(function (task) {
+        task.style.display = 'block';
+    });
+};
+
 editButtons.forEach(function (editButton) {
     editButton.addEventListener('click', editTask);
 });
 showCompletedTasksBtn.addEventListener('click', showCompletedTasks);
+showAllTasksBtn.addEventListener('click', showAllTasks);
