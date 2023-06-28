@@ -78,6 +78,14 @@ let editTask = function () {
 
     taskLabel.setAttribute('contenteditable', 'true');
     taskLabel.focus();
+
+    const selection = window.getSelection();
+    const range = document.createRange();
+    range.selectNodeContents(taskLabel);
+    range.collapse(false);
+    selection.removeAllRanges();
+    selection.addRange(range);
+
     taskLabel.addEventListener('keydown', function (e) {
         if (e.key === 'Enter') {
             e.preventDefault();
