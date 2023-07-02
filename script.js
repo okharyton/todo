@@ -13,14 +13,14 @@ let addTask = function (e) {
         alert('Enter Task Name');
     } else {
         todoDiv.insertAdjacentHTML(`beforeend`, `
-    <li class="task">
-        <div class="task-input__container">
-            <div class="task-line">
+    <div class="task">
+        <ul class="task__container">
+            <li class="task__line">
                 <input type="checkbox" id="checkbox" name="task-name">
                 <label class="task-label" for="task-name">
                     ${taskInput.value}
                 </label>
-            </div>
+            </li>
             <div class="buttons">
                 <button class="edit">
                     <i class="fas fa-edit" style="color: #121212;"></i>
@@ -29,8 +29,8 @@ let addTask = function (e) {
                     <i class="fa fa-trash" aria-hidden="true"></i>
                 </button>
             </div>
-        </div>
-    </li>
+        </ul>
+    </div>
 `);
         let editButtons = document.querySelectorAll('.edit');
         editButtons.forEach(function (editButton) {
