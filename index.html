@@ -1,28 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="dark" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="/dist/main.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="/dist/main.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="script.js"></script>
     <title>Todo</title>
-</head>
-<body class="h-14 bg-gradient-to-r from-cyan-500 to-blue-500">
-<div class="container flex flex-col items-center">
-    <h1 class="title text-orange-900 font-bold text-5xl my-12">Todo List</h1>
-    <div class="input flex  flex-col gap-4 mb-2.5">
-        <input class="task-input" type="text" name="task-input" placeholder="Type task name">
-        <button class="add-task rounded-md bg-indigo-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300">Add task</button>
-        <button class="show-completed-tasks rounded-md bg-indigo-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300" >Completed tasks</button>
-        <button class="show-all-tasks rounded-md bg-indigo-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300">All tasks</button>
+  </head>
+  <body class="h-14 bg-gradient-to-r from-cyan-500 to-blue-500">
+    <div class="container flex flex-col items-center">
+      <h1 class="title text-orange-900 font-bold text-5xl my-12">Todo List</h1>
+      <div class="input flex flex-col gap-4 mb-2.5">
+        <input
+          class="task-input"
+          type="text"
+          name="task-input"
+          placeholder="Type task name"
+        />
+        <button
+          class="add-task rounded-md bg-indigo-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
+        >
+          Add task
+        </button>
+        <button
+          class="show-completed-tasks rounded-md bg-indigo-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
+        >
+          Completed tasks
+        </button>
+        <button
+          class="show-all-tasks rounded-md bg-indigo-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
+        >
+          All tasks
+        </button>
+      </div>
+      <div class="todo-list"></div>
     </div>
-    <div class="todo-list"></div>
-</div>
-</body>
+  </body>
 </html>
